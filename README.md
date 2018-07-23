@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="LICENSE.md">
+    <img src="https://img.shields.io/github/license/mattson543/MouseMeasure.svg">
+  </a>
+</p>
+
 Measure the distance (in pixels) between two points on the screen using your mouse.
 
 ## License
