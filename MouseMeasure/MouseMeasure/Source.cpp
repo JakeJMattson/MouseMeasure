@@ -30,15 +30,17 @@ int main()
 				//Calculate cursor position differences
 				int height = abs(start.y - current.y);
 				int width = abs(start.x - current.x);
+				int dist = sqrt(pow(width, 2) + pow(height, 2));
 
 				//Clear console
 				system("CLS");
 
 				//Display results
-				cout << "Start   - x: " << start.x << " y: " << start.y << endl;
-				cout << "Current - x: " << current.x << " y: " << current.y << endl;
-				cout << "Delta width: " << width << endl;
+				cout << "Start   - x:  " << start.x << " y: " << start.y << endl;
+				cout << "Current - x:  " << current.x << " y: " << current.y << endl;
+				cout << "Delta width:  " << width << endl;
 				cout << "Delta height: " << height << endl;
+				cout << "Distance:     " << dist << endl;
 			}
 
 			//Store location to prevent unnecessary computations
