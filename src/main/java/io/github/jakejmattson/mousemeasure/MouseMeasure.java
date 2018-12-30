@@ -12,6 +12,8 @@ import java.util.logging.Logger;
 public class MouseMeasure implements NativeMouseInputListener {
 
     private Point origin;
+    private TextDisplay topLeft = new TextDisplay();
+    private TextDisplay bottomRight = new TextDisplay();
 
     public static void main(String[] args)
     {
@@ -40,23 +42,25 @@ public class MouseMeasure implements NativeMouseInputListener {
     public void nativeMouseDragged(NativeMouseEvent e)
     {
         Point current = e.getPoint();
-
-        System.out.println("Origin: " + origin);
-        System.out.println("Current: " + current);
-
-        int width = Math.abs(origin.x - current.x);
-        int height = Math.abs(origin.y - current.y);
-
-        System.out.println("Width: " + width);
-        System.out.println("Height: " + height);
+        bottomRight.setLocation(current);
+        bottomRight.setText("X: " + e.getX() + " Y: " + e.getY());
+        bottomRight.setVisible(true);
     }
 
     public void nativeMousePressed(NativeMouseEvent e)
     {
         origin = e.getPoint();
+        topLeft.setLocation(origin);
+        topLeft.setText("X: " + e.getX() + " Y: " + e.getY());
+        topLeft.setVisible(true);
+    }
+
+    public void nativeMouseReleased(NativeMouseEvent e)
+    {
+        topLeft.setVisible(false);
+        bottomRight.setVisible(false);
     }
 
     public void nativeMouseClicked(NativeMouseEvent e) {}
-    public void nativeMouseReleased(NativeMouseEvent e) {}
     public void nativeMouseMoved(NativeMouseEvent e) {}
 }
