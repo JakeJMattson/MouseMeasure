@@ -9,9 +9,8 @@ import java.awt.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MouseMeasure implements NativeMouseInputListener {
-
-    private Point origin;
+public class MouseMeasure implements NativeMouseInputListener
+{
     private TextDisplay topLeft = new TextDisplay();
     private TextDisplay bottomRight = new TextDisplay();
 
@@ -20,15 +19,15 @@ public class MouseMeasure implements NativeMouseInputListener {
         disableLogging();
         MouseMeasure example = new MouseMeasure();
 
-        try {
+        try
+        {
             GlobalScreen.registerNativeHook();
             GlobalScreen.addNativeMouseListener(example);
             GlobalScreen.addNativeMouseMotionListener(example);
         }
-        catch (NativeHookException ex) {
-            System.err.println("There was a problem registering the native hook.");
-            System.err.println(ex.getMessage());
-            System.exit(1);
+        catch (NativeHookException e)
+        {
+            e.printStackTrace();
         }
     }
 
@@ -41,18 +40,12 @@ public class MouseMeasure implements NativeMouseInputListener {
 
     public void nativeMouseDragged(NativeMouseEvent e)
     {
-        Point current = e.getPoint();
-        bottomRight.setLocation(current);
-        bottomRight.setText("X: " + e.getX() + " Y: " + e.getY());
-        bottomRight.setVisible(true);
+        updateFrame(bottomRight, e.getPoint());
     }
 
     public void nativeMousePressed(NativeMouseEvent e)
     {
-        origin = e.getPoint();
-        topLeft.setLocation(origin);
-        topLeft.setText("X: " + e.getX() + " Y: " + e.getY());
-        topLeft.setVisible(true);
+        updateFrame(topLeft, e.getPoint());
     }
 
     public void nativeMouseReleased(NativeMouseEvent e)
@@ -63,4 +56,16 @@ public class MouseMeasure implements NativeMouseInputListener {
 
     public void nativeMouseClicked(NativeMouseEvent e) {}
     public void nativeMouseMoved(NativeMouseEvent e) {}
+
+    private void updateFrame(TextDisplay display, Point location)
+    {
+        display.setLocation(location);
+        display.setText(pointToString(location));
+        display.setVisible(true);
+    }
+
+    private String pointToString(Point point)
+    {
+        return "X: " + point.x + " Y: " + point.y;
+    }
 }

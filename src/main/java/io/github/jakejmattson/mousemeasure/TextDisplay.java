@@ -13,6 +13,7 @@ public class TextDisplay {
         frame = new JFrame();
         frame.setAlwaysOnTop(true);
         frame.setUndecorated(true);
+        frame.setAutoRequestFocus(false);
 
         lblText = new JLabel("Coordinates");
         JPanel panel = new JPanel();
