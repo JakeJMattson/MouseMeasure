@@ -38,23 +38,29 @@ public class MouseMeasure implements NativeMouseInputListener
         logger.setUseParentHandlers(false);
     }
 
+    @Override
     public void nativeMouseDragged(NativeMouseEvent e)
     {
         updateFrame(bottomRight, e.getPoint());
     }
 
+    @Override
     public void nativeMousePressed(NativeMouseEvent e)
     {
         updateFrame(topLeft, e.getPoint());
     }
 
+    @Override
     public void nativeMouseReleased(NativeMouseEvent e)
     {
         topLeft.setVisible(false);
         bottomRight.setVisible(false);
     }
 
+    @Override
     public void nativeMouseClicked(NativeMouseEvent e) {}
+
+    @Override
     public void nativeMouseMoved(NativeMouseEvent e) {}
 
     private void updateFrame(TextDisplay display, Point location)
