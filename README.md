@@ -13,7 +13,7 @@
   </a>
 </p>
 
-Measure the distance (in pixels) between two points on the screen using your mouse. Displays delta x, delta y, and net change.
+Measure the distance (in pixels) between two points on the screen using your mouse. Displays starting location, current location, delta x, delta y, and net change.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
