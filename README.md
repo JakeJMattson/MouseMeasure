@@ -23,10 +23,16 @@ Measure the distance (in pixels) between two points on the screen using your mou
 ### Libraries
 * [JNativeHook](https://github.com/kwhat/jnativehook)
 
-## Getting Started (Software)
+## Getting Started
 <p align="justify">
 The version numbers for each additional software used to build this project are listed in the badges at the top of the page. These dependencies are handled by Maven during build. If building manually, other versions may work, but this is not guaranteed.
 </p>
+
+## Building
+This project is built with Maven. To build the `pom.xml`, please follow the import instructions for your IDE.
+* [IntelliJ](https://www.tutorialspoint.com/maven/maven_intellij_idea.htm)
+* [Eclipse](https://www.tutorialspoint.com/maven/maven_eclispe_ide.htm)
+* [NetBeans](https://www.tutorialspoint.com/maven/maven_netbeans.htm)
 
 ### Installing Java
 <p align="justify">
