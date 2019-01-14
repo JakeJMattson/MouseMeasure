@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 
 public class MouseMeasure implements NativeMouseInputListener
 {
-    private TextDisplay topLeft = new TextDisplay();
-    private TextDisplay bottomRight = new TextDisplay();
+    private TextDisplay topLeft = new TextDisplay(Location.TOP_LEFT);
+    private TextDisplay bottomRight = new TextDisplay(Location.BOTTOM_RIGHT);
 
     public static void main(String[] args)
     {

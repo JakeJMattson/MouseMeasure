@@ -7,15 +7,18 @@ public class TextDisplay {
 
     private JFrame frame;
     private JLabel lblText;
+    private Location relativeLocation;
 
-    public TextDisplay()
+    public TextDisplay(Location relativeLocation)
     {
-        frame = new JFrame();
+        this.frame = new JFrame();
+        this.lblText = new JLabel("Coordinates");
+        this.relativeLocation = relativeLocation;
+
         frame.setAlwaysOnTop(true);
         frame.setUndecorated(true);
         frame.setAutoRequestFocus(false);
 
-        lblText = new JLabel("Coordinates");
         JPanel panel = new JPanel();
         panel.add(lblText);
 
@@ -25,28 +28,22 @@ public class TextDisplay {
 
     public void setLocation(Point location)
     {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double screenWidth = screenSize.getWidth();
-        double screenHeight = screenSize.getHeight();
-
         Rectangle frameBounds = frame.getBounds();
         double frameHeight = frameBounds.getHeight();
         double frameWidth = frameBounds.getWidth();
 
-        int rightBound = (int)(location.getX() + frameWidth);
-        int lowerBound = (int)(location.getY() + frameHeight);
-
         final int BUFFER = 10;
 
-        if (rightBound >= screenWidth)
-            location.x -= frameWidth + BUFFER;
-        else
+        if (relativeLocation == Location.TOP_LEFT)
+        {
             location.x += BUFFER;
-
-        if (lowerBound >= screenHeight)
-            location.y -= frameHeight + BUFFER;
-        else
             location.y += BUFFER;
+        }
+        else if (relativeLocation == Location.BOTTOM_RIGHT)
+        {
+            location.x -= frameWidth + BUFFER;
+            location.y -= frameHeight + BUFFER;
+        }
 
         frame.setLocation(location);
     }
