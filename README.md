@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">
-    <img src="https://img.shields.io/badge/Java-8-blue.svg" alt="Java 8">
+  <a href="https://jdk.java.net/11/">
+    <img src="https://img.shields.io/badge/Java-11-blue.svg" alt="Java 11">
   </a>
   <a href="https://github.com/kwhat/jnativehook">
     <img src="https://img.shields.io/badge/jnativehook-2.1.0-blue.svg" alt="jnativehook 2.1.0">
@@ -18,7 +18,7 @@ Measure the distance (in pixels) between two points on the screen using your mou
 ## Prerequisites
 
 ### Languages
-* [Java](https://go.java/index.html?intcmp=gojava-banner-java-com)
+* [Java](https://jdk.java.net/11/)
 
 ### Libraries
 * [JNativeHook](https://github.com/kwhat/jnativehook)
@@ -26,7 +26,7 @@ Measure the distance (in pixels) between two points on the screen using your mou
 ## Getting Started
 ### Installing Java
 <p align="justify">
-Visit the <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java Downloads</a> 
+Visit the <a href="https://jdk.java.net/11/">Java Downloads</a> 
 page and select the version of your choice.
 Run the installer and follow the instructions provided.
 </p>
