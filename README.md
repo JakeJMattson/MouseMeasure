@@ -26,8 +26,7 @@ Measure the distance (in pixels) between two points on the screen using your mou
 ## Getting Started
 ### Installing Java
 <p align="justify">
-Visit the <a href="https://jdk.java.net/11/">Java Downloads</a> 
-page and select the version of your choice.
+Visit the <a href="https://jdk.java.net/11/">Java Downloads</a> page and select the version of your choice.
 Run the installer and follow the instructions provided.
 </p>
 
@@ -35,7 +34,6 @@ Run the installer and follow the instructions provided.
 This project is built with Maven. To build the `pom.xml`, please follow the import instructions for your IDE.
 * [IntelliJ](https://www.tutorialspoint.com/maven/maven_intellij_idea.htm)
 * [Eclipse](https://www.tutorialspoint.com/maven/maven_eclispe_ide.htm)
-* [NetBeans](https://www.tutorialspoint.com/maven/maven_netbeans.htm)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
