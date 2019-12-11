@@ -3,10 +3,18 @@ package io.github.jakejmattson.mousemeasure
 import java.awt.Point
 import javax.swing.*
 
-class TextDisplay(relativeLocation: Location) {
-    private val frame: JFrame
-    private val lblText: JLabel
-    private val relativeLocation: Location
+class TextDisplay(private val relativeLocation: Location) {
+    private val lblText: JLabel = JLabel("Coordinates")
+
+    private val frame: JFrame = JFrame().apply {
+        isAlwaysOnTop = true
+        isUndecorated = true
+        isAutoRequestFocus = false
+        val panel = JPanel()
+        panel.add(lblText)
+        add(panel)
+        pack()
+    }
 
     fun setLocation(location: Point) {
         val frameBounds = frame.bounds
@@ -25,24 +33,11 @@ class TextDisplay(relativeLocation: Location) {
         frame.location = location
     }
 
-    fun setText(text: String?) {
+    fun setText(text: String) {
         lblText.text = text
     }
 
     fun setVisible(visible: Boolean) {
         frame.isVisible = visible
-    }
-
-    init {
-        frame = JFrame()
-        lblText = JLabel("Coordinates")
-        this.relativeLocation = relativeLocation
-        frame.isAlwaysOnTop = true
-        frame.isUndecorated = true
-        frame.isAutoRequestFocus = false
-        val panel = JPanel()
-        panel.add(lblText)
-        frame.add(panel)
-        frame.pack()
     }
 }
