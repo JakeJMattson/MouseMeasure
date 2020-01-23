@@ -1,4 +1,4 @@
-package io.github.jakejmattson.mousemeasure
+package me.jakejmattson.mousemeasure
 
 import java.awt.Point
 import javax.swing.*

@@ -1,4 +1,4 @@
-package io.github.jakejmattson.mousemeasure
+package me.jakejmattson.mousemeasure
 
 import org.jnativehook.mouse.*
 import java.awt.Point
